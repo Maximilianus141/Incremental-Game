@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="dev.cowycorn.incrgame.MainController"
+            spacing="10" alignment="CENTER">
+    <Button fx:id="play-button" text="PLAY" onAction="#playButton"/>
+    <Button fx:id="load-button" text="LOAD" onAction="#loadButton"/>
+    <Button fx:id="settings-button" text="SETTINGS" onAction="#settingsButton"/>
+    <Button fx:id="exit-button" text="EXIT" onAction="#exitButton"/>
+
+
+
+    <Label fx:id="coolLabel" text="THIS IS A LABEL"/>
+    <Label fx:id="titleLabel" text="Welcome!"/>
+    <Button fx:id="button" text="Click me!" onAction="#handleButtonClick"/>
+    <Button fx:id="sceneSwitch" text="SWITCH" onAction="#twitch"/>
+
+</VBox>
