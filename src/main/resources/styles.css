@@ -1,0 +1,65 @@
+/* Apply a background color to all VBoxes in the main scene (like mainVbox and sideVbox) */
+.root {
+    -fx-background-color: #f4f4f4;
+}
+
+/* Style the main title label in the menu */
+#title {
+    -fx-font-size: 28pt;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+}
+
+/* Style all buttons */
+.button {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-text-fill: white;
+    -fx-font-size: 14pt;
+    -fx-padding: 10 20;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-pref-width: 280;
+}
+
+/* Style the 'PLAY' button specifically using its fx:id */
+#playButton {
+    -fx-background-color: #FF9800; /* Orange */
+}
+#upgradesButton {
+    -fx-background-color: #f9ff4b;
+}
+
+.button:hover {
+    -fx-background-color: #45a049; /* Slightly darker green */
+    -fx-cursor: hand; /* Changes cursor to a hand icon */
+    -fx-scale-x: 1.05; /* Slightly grows the button */
+    -fx-scale-y: 1.05;
+}
+
+.button:pressed {
+    -fx-background-color: #2E7D32; /* Even darker green */
+    -fx-scale-x: 0.98; /* Shrink slightly to simulate depth */
+    -fx-scale-y: 0.98;
+    -fx-translate-y: 1; /* Move down 1 pixel */
+}
+
+/* Style specifically for the money label */
+.currency-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 0 5 0;
+}
+
+/* Specific color for gold/money */
+.money-label {
+    -fx-text-fill: #00ff33;
+}
+
+/* Specific color for the second currency */
+.multiplier-label {
+    -fx-text-fill: #ff6565;
+}
+
+.rebirth-label {
+    -fx-text-fill: #4a6eff
+}
