@@ -1,9 +1,9 @@
 package dev.cowycorn.incrgame;
 
 public class MainPageUpdator implements Runnable{
-    MainController mainController;
+    ControllerWithCurrencyInfo mainController;
 
-    public MainPageUpdator(MainController mainController) {
+    public MainPageUpdator(ControllerWithCurrencyInfo mainController) {
         this.mainController = mainController;
     }
 

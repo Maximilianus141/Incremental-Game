@@ -1,5 +1,9 @@
 package dev.cowycorn.incrgame.util;
 
+import dev.cowycorn.NumberFormatter;
+import dev.cowycorn.incrgame.Config;
+import dev.cowycorn.incrgame.backend.CurrencyManager;
+import dev.cowycorn.incrgame.backend.currency.Currency;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,5 +24,8 @@ public class FX {
         scene.getStylesheets().add(FX.class.getResource("/styles.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
+    }
+    public static String getFormattedCurrencyInfo(Currency cur) {
+        return cur.getName() + ": " + "x" + Config.get().getNumberFormatter().format(CurrencyManager.getInstance().getMultiplier(cur)) + "\n" + Config.get().getNumberFormatter().format(cur.getAmount());
     }
 }

@@ -9,6 +9,6 @@ public class Updator implements Runnable {
 
     @Override
     public void run() {
-        currencyManager.addToCurrency(Money.getInstance(), new BigNumber(0.2));
+        currencyManager.addToCurrency(Money.getInstance(), new BigNumber(1));
     }
 }

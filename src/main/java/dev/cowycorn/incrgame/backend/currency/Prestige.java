@@ -19,16 +19,10 @@ public class Prestige extends Currency{
                     return ownAmount.add(new BigNumber(1)).multiply(otherAmount);
                 }
             };
-            CurrencyEffect moneyMultiplier = new CurrencyEffect() {
-                @Override
-                public BigNumber multiply(BigNumber ownAmount, BigNumber otherAmount) {
-                    return ownAmount.multiply(new BigNumber(0.05)).add(new BigNumber(1)).multiply(otherAmount);
-                }
-            };
+
 
             HashMap<Class, CurrencyEffect> effects = new HashMap<>();
             effects.put(Rebirth.class, rebirthMultiplier);
-            effects.put(Money.class, moneyMultiplier);
 
             instance = new Prestige(new BigNumber(0), "Prestige", effects);
         }

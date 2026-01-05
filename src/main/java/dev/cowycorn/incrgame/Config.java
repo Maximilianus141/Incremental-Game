@@ -1,5 +1,9 @@
 package dev.cowycorn.incrgame;
 
+import dev.cowycorn.NumberFormatter;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -7,6 +11,10 @@ import java.util.Properties;
 public class Config {
     private static Config instance;
     private Properties properties;
+
+    @Getter
+    @Setter
+    private NumberFormatter numberFormatter = new NumberFormatter();
 
     private Config() {
         properties = new Properties();

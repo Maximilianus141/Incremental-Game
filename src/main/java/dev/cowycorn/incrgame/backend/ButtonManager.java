@@ -45,20 +45,28 @@ public class ButtonManager {
             String propertyName = cur.getName().toLowerCase();
 
             double costIncrease = Double.parseDouble((String) properties.get(propertyName + ".upgrade.cost.increase"));
+
             double amountIncrease = Double.parseDouble((String) properties.get(propertyName + ".upgrade.amount.increase"));
             double baseCost = Double.parseDouble((String) properties.get(propertyName + ".upgrade.cost.base"));
             double baseAmount = Double.parseDouble((String) properties.get(propertyName + ".upgrade.amount.base"));
             boolean resetting = Boolean.parseBoolean((String) properties.get(propertyName + ".upgrade.resetting"));
-
+            double costCurve = 0;
+            try {
+                costCurve = Double.parseDouble((String) properties.get(propertyName + ".upgrade.cost.curve"));
+            } catch (Exception _) {}
+            double amountCurve = 0;
+            try {
+                amountCurve = Double.parseDouble((String) properties.get(propertyName + ".upgrade.amount.curve"));
+            } catch (Exception _) {}
             ArrayList<Button> buttons = new ArrayList<>();
 
             for (int i = 0; i < HOW_MANY_BUTTONS; i++) {
                 Button b = new Button();
                 b.setResetting(resetting);
                 b.setFrom(before);
-                b.setCost(GameMath.nextGeometricCost(new BigNumber(baseCost), new BigNumber(costIncrease), i));
+                b.setCost(GameMath.nextGeometricCost(new BigNumber(baseCost), new BigNumber(costIncrease * i * (costCurve + 1)), i));
                 b.setTo(cur);
-                b.setAmount(GameMath.nextGeometricCost(new BigNumber(baseAmount), new BigNumber(amountIncrease), i));
+                b.setAmount(GameMath.nextGeometricCost(new BigNumber(baseAmount), new BigNumber(amountIncrease * i * (amountCurve + 1)), i));
                 buttons.add(b);
             }
             before = cur;
